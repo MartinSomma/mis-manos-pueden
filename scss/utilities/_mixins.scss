@@ -1,0 +1,7 @@
+@mixin prop-texto ($font-family, $size, $align, $height, $weight) {
+    font-family: $font-family;
+    font-size: $size;
+    text-align: $align;
+    line-height: $height;
+    font-weight: $weight;
+}

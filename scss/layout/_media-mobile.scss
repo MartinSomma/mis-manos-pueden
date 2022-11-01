@@ -1,0 +1,114 @@
+
+@media (max-width: 576px){
+    /*=========== mobile view - index ===============*/
+
+    section{
+        margin: 20px;
+        h1{
+            font-size: $tamanio-h1-mobile;
+            text-align: center;
+        }
+    } 
+
+    .bannerDecora{
+        background-image: url("../img/fondoBanne_mobile.jpg"); 
+        width: 100%;
+        height: 142px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .espacioTarjetas  {
+        /*background-color: blue;*/
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+    }
+
+    main{
+        section{
+            h2{
+                font-family: 'Gotu';
+                font-size: $tamanio-h2-mobile;
+                text-align: center;
+            }
+        } 
+    } 
+
+    /*======== QUIENES SOMOS MOBILE VIEW ========*/
+    .gridContainer {
+        
+        grid-template-columns: 1fr;
+        grid-template-rows: 113px minmax(10px, auto) 80px;
+        grid-template-areas: 
+        "header "
+        "main "
+        "footer "
+        ;
+    }
+
+    
+
+    /*======== PRODUCTOS MOBILE VIEW ========*/
+        
+    .seccionTarjetas{
+        flex-direction: column;
+    }
+
+    .cardProductoNombre{
+        font-size: $tamanio-texto-mobile;
+    }
+
+    .cardProductoPrecio{
+        font-size: $tamanio-texto-mobile;
+    }
+
+    .cardProductoFdP{
+        font-size: $tamanio-texto-mobile;
+    }
+
+
+    /*======== COMO COMPRAR MOBILE VIEW ======*/
+
+    .comoComprar{
+        p{
+            font-size: $tamanio-texto-mobile;
+            margin-bottom: 100px;
+            margin-top: 20px;
+            width: 80%;
+            text-align: justify;
+            
+            
+        }
+    } 
+
+    /*======= FOOTER MOBILE VIEW ======*/
+    .footer {
+        font-size: 8px;
+    }
+    
+    .tamanioLogos {
+    height: 20px;
+    width: 20px;
+    }
+    .letras{    
+        font-size: 0.5em;
+        background-color: lightgray;
+        font-family: 'habibi';
+        justify-content: center;
+        align-items: center;
+        h2{
+            font-size: 15px;
+        }
+    }
+    
+
+}

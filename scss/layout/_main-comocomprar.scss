@@ -1,0 +1,11 @@
+.comoComprar{
+    
+    p {
+        margin-bottom: 10px;
+        margin-top: 20px;
+        width: 80%;
+        @include prop-texto('habibi', $tamanio-texto-web, justify, none, none);
+    }
+    
+    
+}

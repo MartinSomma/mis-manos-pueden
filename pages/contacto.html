@@ -10,11 +10,11 @@
 </head>
 <body>
     
-<div class="container-fluid">
+<div class="gridContainer">
 
         <header class="container-fluid row">
             <!--NavBar de Boostrap -->
-            <nav class="navbar navbar-expand-lg ">
+            <nav class="navbar navbar-expand-lg bg-white">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="#"><img src="../img/Logo.jpg" alt="Bootstrap" width="113" height="100"></a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,12 +52,12 @@
             
         </header>
 
-        <main class="container-fluid row">
+        <main class=" ">
             <section >
                 <h1>Contactanos</h1>
             </section>
-
-            <div class="mb-3">
+          <div class="container-fluid ">
+            <div class="mb-3 ">
                 <label for="exampleFormControlInput1" class="form-label">Nombre y Apellido</label>
                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
               </div>
@@ -73,49 +73,26 @@
               <div class="d-grid gap-2 d-md-block">
                 <button class="btn btn-secondary" type="button">Enviar</button>
               </div>
-
-
-            <!--
-            <section >
-                <form action="" method="post" enctype="" >
-                    <fieldset class="contenedorCampos">
-                        <label for="nombre">
-                            <p>Nombre y Apellido</p>
-                            <input type="text" id="nombre" placeholder="escribi tu nombre" class="inputNombre">
-                        </label>
-                        <label for="correo" >
-                            <p>Correo Electronico</p> 
-                                <input type="email" id="correo" placeholder="escribi tu direccion de correo electronico" class="inputCorreo">
-                            
-                            </label>
-                        <label for="mensaje">
-                            <p>Mensaje</p>
-                            <input type="text" id="mensaje" placeholder="dejanos tu mensaje" class="inputMensaje">
-                        </label>
-                    </fieldset>
-                <input type="submit" class="botonEnviar">
-                </form>
-            </section>
-            -->
+            </div>
         </main>
 
 
-        <footer class="row m-0 p-0 letras fixed-bottom">
-            <div class="col align-self-center ">
-                    <p class="m-0 fw-bold">Contactanos:</p>
-                    <ul>
-                        <li>Tel: +54 11 3456 7890</li>
-                        <li>meli@gmail.com</li>
-                    </ul>
-            </div>
-            <div class="col align-self-center text-end">
-                <p class="m-0 fw-bold">Sigamos conectados</p>
-                <div>
-                    <a href="https://wa.me/+541161172331" target="_blank"><img src="../img/whatsapp.png" alt="" class="tamanioLogos"></a>
-                    <a href="https://www.instagram.com/mismanos.pueden/" target="_blank"><img src="../img/instagram.png" alt="" class="tamanioLogos"></a>
-                </div>
-            </div>
-        </footer>
+        <footer class="d-flex justify-content-between ">
+          <div class="align-self-center datosContacto ">
+                  <p class="m-0 p-0 fw-bold ">Contactanos:</p>
+                  <ul class="m-0 p-0">
+                      <li>Tel: +54 11 3456 7890</li>
+                      <li>meli@gmail.com</li>
+                  </ul>
+          </div>
+          <div class="d-flex flex-column align-self-center fw-bold redesSociales">
+              <p class="m-0 p-0">Sigamos conectados:</p>
+              <div>
+                  <a href="https://wa.me/+541161172331" target="_blank"><img src="../img/whatsapp.png" alt="" class="tamanioLogos"></a>
+                  <a href="https://www.instagram.com/mismanos.pueden/" target="_blank"><img src="../img/instagram.png" alt="" class="tamanioLogos"></a>
+              </div>
+          </div>
+      </footer>
     </div>
     <!-- scripts -->
 

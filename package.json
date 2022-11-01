@@ -1,0 +1,19 @@
+{
+  "name": "proyecto",
+  "version": "1.0.0",
+  "description": "Mis manos pueden es un proyecto de e-commerce desarrollado en el contexte de trabajo practico de coder house",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinSomma/mis-manos-pueden.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MartinSomma/mis-manos-pueden/issues"
+  },
+  "homepage": "https://github.com/MartinSomma/mis-manos-pueden#readme"
+}

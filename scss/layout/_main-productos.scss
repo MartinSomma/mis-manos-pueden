@@ -1,0 +1,34 @@
+
+.seccionTarjetas{
+    width: 100%;
+    height: auto;
+    display:flex;
+    gap: 5px;
+    justify-content: space-evenly;
+    flex-flow: wrap;
+
+}
+
+.cardProducto{
+    margin-top: 20px;
+    text-align: center;
+    img {
+        width: 280px;
+        height: 160px;
+        overflow: hidden;
+        box-shadow: 14px 14px 26px 7px rgba(0,0,0,0.33);
+        border-radius: 10% 10% 10% 10%;
+    }
+}
+
+.cardProductoNombre{
+    @include prop-texto('tahoma', $tamanio-texto-web, none, none, bold);
+}
+
+.cardProductoPrecio{
+    @include prop-texto('gotu', $tamanio-texto-web, none, none, bold);
+}
+
+.cardProductoFdP{
+    @include prop-texto('gotu', $tamanio-texto-web, none, none,italic);
+}

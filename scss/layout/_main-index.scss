@@ -1,0 +1,55 @@
+ main {
+    grid-area: main;
+    section{
+        h1{
+            @include prop-texto('Habibi', $tamnio-h1-web, center, 100px, none);
+        }
+        h2{
+            @include prop-texto('Gotu', $tamnio-h2-web, center, 100px, none);
+
+        }
+    }
+}
+
+.bannerDecora{
+    background-image: url("../img/fondoBanne.jpg"); 
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    h1{
+        line-height: 350px;
+        vertical-align:middle;
+    }
+}
+
+.destacados {
+    width: 100%;
+}
+
+.espacioTarjetas{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    min-height: 500px;
+}
+
+.tarjeta {
+    @include prop-texto('Gotu', $tamanio-texto-web, center, none, none);
+    div img{
+        width: 238px;
+        height: 159px;
+    }
+}
+
+.tarjetaImg{
+    width: 238px;
+    height: 159px;
+    box-shadow: 14px 14px 26px 7px rgba(0,0,0,0.33);
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+} 
+
