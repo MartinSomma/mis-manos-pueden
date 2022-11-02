@@ -165,23 +165,38 @@ main section h2 {
 }
 
 .quienesSomos p {
-  margin: 10px;
-  font-family: "gotu";
+  margin-left: 10px;
+  font-family: "habibi";
   font-size: 16px;
   text-align: none;
   line-height: none;
   font-weight: none;
 }
 
-.comoComprar p {
-  margin-bottom: 10px;
-  margin-top: 20px;
-  width: 80%;
+.comoComprar {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.comoComprar div p {
+  width: 80vh;
+}
+
+.comoComprarPregunta {
+  font-weight: bold;
+}
+
+.comoComprarRespuesta, .comoComprarPregunta {
   font-family: "habibi";
   font-size: 16px;
   text-align: justify;
   line-height: none;
   font-weight: none;
+  margin: 10px;
+  padding: 0;
 }
 
 @media (max-width: 576px) {
@@ -241,10 +256,6 @@ main section h2 {
   /*======== COMO COMPRAR MOBILE VIEW ======*/
   .comoComprar p {
     font-size: 12px;
-    margin-bottom: 100px;
-    margin-top: 20px;
-    width: 80%;
-    text-align: justify;
   }
   /*======= FOOTER MOBILE VIEW ======*/
   .footer {

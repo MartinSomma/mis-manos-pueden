@@ -1,11 +1,27 @@
 .comoComprar{
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    div{
+        p {
+            width: 80vh;
+        }
+    } 
+}
+
+.comoComprarPregunta {
+    @extend .comoComprarRespuesta;
+    font-weight: bold;
     
-    p {
-        margin-bottom: 10px;
-        margin-top: 20px;
-        width: 80%;
-        @include prop-texto('habibi', $tamanio-texto-web, justify, none, none);
-    }
-    
+}
+
+.comoComprarRespuesta {
+    @include prop-texto('habibi', $tamanio-texto-web, justify, none, none);
+    margin: 10px;
+    padding: 0;
     
 }

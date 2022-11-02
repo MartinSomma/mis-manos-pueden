@@ -1,7 +1,7 @@
 .quienesSomos{
     p{
-        margin: 10px;
-        @include prop-texto('gotu', $tamanio-texto-web, none, none, none );
+        margin-left: 10px;
+        @include prop-texto('habibi', $tamanio-texto-web, none, none, none );
     }
 }
 
