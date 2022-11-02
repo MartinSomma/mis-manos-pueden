@@ -164,25 +164,20 @@ main section h2 {
   font-weight: italic;
 }
 
-.quienesSomos p {
+.quienesSomos {
   margin-left: 10px;
   font-family: "habibi";
   font-size: 16px;
-  text-align: none;
+  text-align: justify;
   line-height: none;
   font-weight: none;
 }
 
 .comoComprar {
-  margin: 0;
   width: 100%;
+  margin: auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
   flex-wrap: wrap;
-}
-.comoComprar div p {
-  width: 80vh;
 }
 
 .comoComprarPregunta {

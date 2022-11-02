@@ -1,9 +1,8 @@
 .quienesSomos{
-    p{
+   
         margin-left: 10px;
-        @include prop-texto('habibi', $tamanio-texto-web, none, none, none );
-    }
-}
+        @include prop-texto('habibi', $tamanio-texto-web, justify, none, none );
+   }
 
 
 
