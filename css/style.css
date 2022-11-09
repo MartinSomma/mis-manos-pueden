@@ -41,13 +41,13 @@ footer li a {
 .redesSociales {
   width: 50%;
   text-align: right;
-  margin-right: 20px;
+  margin-right: 100px;
 }
 
 .datosContacto {
   width: 50%;
   text-align: left;
-  margin-left: 20px;
+  margin-left: 100px;
 }
 
 .tamanioLogos {
@@ -115,12 +115,13 @@ main section h2 {
   width: 238px;
   height: 159px;
   box-shadow: 14px 14px 26px 7px rgba(0, 0, 0, 0.33);
-  border-radius: 10% 10% 10% 10%;
+  border-radius: 10px;
   overflow: hidden;
 }
 
 .seccionTarjetas {
-  width: 100%;
+  margin: auto;
+  max-width: 1700px;
   height: auto;
   display: flex;
   gap: 5px;
@@ -129,23 +130,31 @@ main section h2 {
 }
 
 .cardProducto {
+  width: 350px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
   margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
 }
 .cardProducto img {
-  width: 280px;
-  height: 160px;
+  width: 238px;
+  height: 159px;
   overflow: hidden;
   box-shadow: 14px 14px 26px 7px rgba(0, 0, 0, 0.33);
-  border-radius: 10% 10% 10% 10%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
-.cardProductoNombre {
-  font-family: "tahoma";
+.cardProductoNombre, .cardProductoComentario {
+  font-family: "habibi";
   font-size: 16px;
   text-align: none;
   line-height: none;
-  font-weight: bold;
+  font-weight: none;
 }
 
 .cardProductoPrecio {
@@ -156,12 +165,30 @@ main section h2 {
   font-weight: bold;
 }
 
-.cardProductoFdP {
-  font-family: "gotu";
-  font-size: 16px;
-  text-align: none;
-  line-height: none;
-  font-weight: italic;
+.cardProductoComentario {
+  height: 160px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.btn {
+  border-radius: 5px;
+  font-family: "habibi";
+  color: #000000;
+  font-size: 15px;
+  background: #c1c6c9;
+  padding: 10px 30px 10px 30px;
+  text-decoration: none;
+  list-style: none;
+}
+.btn a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.btn:hover {
+  background: #7d8285;
+  text-decoration: none;
 }
 
 .quienesSomos {
@@ -173,8 +200,13 @@ main section h2 {
   font-weight: none;
 }
 
+.ajustarContenido {
+  width: 70%;
+  margin: auto;
+}
+
 .comoComprar {
-  width: 100%;
+  width: 70%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -192,6 +224,19 @@ main section h2 {
   font-weight: none;
   margin: 10px;
   padding: 0;
+}
+
+.form-label {
+  font-family: "habibi";
+  font-size: 16px;
+  text-align: justify;
+  line-height: none;
+  font-weight: none;
+}
+
+.ajustarContenidoContacto {
+  width: 70%;
+  margin: auto;
 }
 
 @media (max-width: 576px) {
@@ -215,14 +260,14 @@ main section h2 {
     align-items: center;
   }
   .espacioTarjetas {
-    /*background-color: blue;*/
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 40px;
   }
   main section h2 {
     font-family: "Gotu";
@@ -235,26 +280,54 @@ main section h2 {
     grid-template-rows: 113px minmax(10px, auto) 80px;
     grid-template-areas: "header " "main " "footer ";
   }
+  .ajustarContenido {
+    width: 95%;
+  }
   /*======== PRODUCTOS MOBILE VIEW ========*/
   .seccionTarjetas {
     flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0px;
+    padding: 0px;
   }
-  .cardProductoNombre {
-    font-size: 12px;
+  .cardProductoNombre, .cardProductoComentario {
+    font-size: 14px;
   }
   .cardProductoPrecio {
-    font-size: 12px;
+    font-size: 14px;
   }
-  .cardProductoFdP {
-    font-size: 12px;
+  .cardProductoComentario {
+    height: 90px;
   }
   /*======== COMO COMPRAR MOBILE VIEW ======*/
+  .comoComprar {
+    width: 95%;
+  }
   .comoComprar p {
-    font-size: 12px;
+    font-size: 16px;
+  }
+  /*======== CONTACTOS MOBILE VIEW ======*/
+  .form-label {
+    font-family: "habibi";
+    font-size: 16px;
+    text-align: justify;
+    line-height: none;
+    font-weight: none;
   }
   /*======= FOOTER MOBILE VIEW ======*/
   .footer {
     font-size: 8px;
+  }
+  .datosContacto {
+    width: 50%;
+    text-align: left;
+    margin-left: 15px;
+  }
+  .redesSociales {
+    width: 50%;
+    text-align: right;
+    margin-right: 15px;
   }
   .tamanioLogos {
     height: 20px;
@@ -295,6 +368,28 @@ main section h2 {
     font-family: "habibi";
     justify-content: center;
     align-items: center;
+  }
+  .espacioTarjetas {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+  /* ======= QUIENES SOMOS ====== */
+  .ajustarContenido {
+    width: 95%;
+  }
+  /* ======= COMO COMPRAR ====== */
+  .comoComprar {
+    width: 95%;
+  }
+  /* ======= CONTACTO ====== */
+  .ajustarContenidoContacto {
+    width: 70%;
   }
 }
 

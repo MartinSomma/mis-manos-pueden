@@ -4,7 +4,10 @@
         @include prop-texto('habibi', $tamanio-texto-web, justify, none, none );
    }
 
-
+.ajustarContenido{
+        width: 70%;
+        margin: auto;
+}
 
 
 

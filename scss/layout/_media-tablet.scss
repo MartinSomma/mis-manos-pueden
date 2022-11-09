@@ -34,6 +34,31 @@
         align-items: center;
     }
 
-   
+    .espacioTarjetas  {
+        width: 80%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: auto;
+        margin-bottom: 40px;
+        
+    }
+    /* ======= QUIENES SOMOS ====== */
+    .ajustarContenido{
+        width: 95%;
+    }
+
+    /* ======= COMO COMPRAR ====== */
+    .comoComprar{
+        width: 95%;
+    }
+    /* ======= CONTACTO ====== */
+    .ajustarContenidoContacto{
+        width: 70%;
+    }
+
+
     
 }
