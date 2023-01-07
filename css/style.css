@@ -205,6 +205,23 @@ main section h2 {
   margin: auto;
 }
 
+.tabla tr td {
+  width: 20%;
+  height: 80px;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.encabezado {
+  background-color: lightgray;
+  text-align: center;
+}
+
+.tabla {
+  width: 1000px;
+  margin: auto;
+}
+
 .comoComprar {
   width: 70%;
   margin: auto;
