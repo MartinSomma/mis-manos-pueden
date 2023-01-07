@@ -99,12 +99,10 @@ function borrarTablaCarrito () {
 }
 
 function eliminarIdDelCarrito(id) {
-    console.log ("pasa" + id)
     let carrito = recuperarCarritoLS()
     const posicion = carrito.findIndex(e => e.id == id)
     carrito.splice(posicion,1)
     guardarCarritoLS(carrito)
-    console.log (carrito)
 
 }
 function vaciarCarrito() {

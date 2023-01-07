@@ -20,7 +20,7 @@ productos.forEach(element => {
     card.className = "cardProducto"
     card.innerHTML =  `
             <div class="cardImg ">
-                <img src="../img/${element.foto}" alt="Foto de Velas Magnolia">
+                <img src="../img/${element.foto}" alt="${element.nombre}">
             </div>
             <p class="cardProductoNombre"><strong> ${element.nombre} </strong></p>
             <p class="cardProductoComentario">${element.descripcion}</p>
@@ -33,7 +33,6 @@ seccionTarjetas.appendChild(card)
 
 const botones = document.querySelectorAll(".cardProducto")
 
-
 for( i=0; i < botones.length; i++) {
     botones[i].querySelector(".btn").onclick = (e) => agregarCarrito(e.target.dataset.id)
 }
@@ -42,8 +41,14 @@ for( i=0; i < botones.length; i++) {
 function agregarCarrito (itemID){
     carrito = recuperarCarritoLS()
     const prod = productos.find(e => e.id == itemID)
-    
-    if (carrito.length == 0) {
+    const indexCarrito = carrito.findIndex(e => e.id == itemID) 
+
+    if (indexCarrito >=0) {
+        //console.log("el producto esta en el carrito")
+        carrito[indexCarrito].cantidad++
+        guardarCarritoLS(carrito)
+    } else{
+        //console.log("el producto NO esta en el carrito")
         auxCarrito.cantidad=1
         auxCarrito.id=prod.id
         auxCarrito.nombre=prod.nombre
@@ -52,22 +57,6 @@ function agregarCarrito (itemID){
         auxCarrito.precio=prod.precio
         carrito.push(auxCarrito)
         guardarCarritoLS(carrito)
-    } else {
-        const indexItem = carrito.findIndex( e => e.id==itemID)
-        if (indexItem<0){
-            auxCarrito.cantidad=1
-            auxCarrito.id=prod.id
-            auxCarrito.nombre=prod.nombre
-            auxCarrito.foto=prod.foto
-            auxCarrito.descripcion=prod.descripcion
-            auxCarrito.precio=prod.precio
-            carrito.push(auxCarrito)
-            guardarCarritoLS(carrito)
-        } else {
-            carrito[indexItem].cantidad++
-            guardarCarritoLS(carrito)
-        }
-        
     }
     actualizarBasquet(carrito)
 }
@@ -83,15 +72,12 @@ function inicializarCarrito(){
 function recuperarCarritoLS(){
     const valor = localStorage.getItem('miCarrito')
     const array = []
+    
     if (valor == null){
         return array
     } else {
         return JSON.parse(localStorage.getItem('miCarrito'))    
     }
-    
-    return JSON.parse(localStorage.getItem('miCarrito'))
-    
-
 }
     
 function guardarCarritoLS(array){
