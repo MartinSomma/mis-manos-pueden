@@ -205,9 +205,8 @@ main section h2 {
   margin: auto;
 }
 
-.tabla tr td {
-  width: 20%;
-  height: 80px;
+.tablaBody tr td {
+  height: 50px;
   border-bottom: 1px solid black;
   text-align: center;
 }
@@ -218,8 +217,13 @@ main section h2 {
 }
 
 .tabla {
-  width: 1000px;
+  width: 80%;
   margin: auto;
+  margin-bottom: 20px;
+}
+
+.tablaFooter td {
+  text-align: center;
 }
 
 .comoComprar {
