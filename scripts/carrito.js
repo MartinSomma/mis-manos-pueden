@@ -51,9 +51,7 @@ function llenarTablaCarrito(){
     }
 }
 
-//const boton = botones[0].querySelector(".btn")
-//boton.onclick = (e) => console.log(e.target)
-//console.log(boton)
+
 
 function recuperarCarritoLS(){
     return JSON.parse(localStorage.getItem('miCarrito'))
@@ -113,8 +111,6 @@ function vaciarCarrito() {
     let carrito = recuperarCarritoLS()
     carrito.splice(0,carrito.length)
     guardarCarritoLS(carrito)
-    //localStorage.removeItem('miCarrito')
-    //localStorage.setItem('miCarrito', [])
     borrarTablaCarrito()
     llenarTablaCarrito()
 }

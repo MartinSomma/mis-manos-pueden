@@ -1,7 +1,6 @@
-localStorage.clear()
-
 const seccionTarjetas = document.querySelector(".seccionTarjetas")
 const pathImg = '../img/'
+
 
 let auxCarrito = {
     id: 0,
@@ -14,6 +13,8 @@ let auxCarrito = {
 
 let carrito = recuperarCarritoLS()
 
+actualizarBasquet(carrito)
+
 productos.forEach(element => {
     const card = document.createElement("div")
     card.className = "cardProducto"
@@ -24,18 +25,14 @@ productos.forEach(element => {
             <p class="cardProductoNombre"><strong> ${element.nombre} </strong></p>
             <p class="cardProductoComentario">${element.descripcion}</p>
             <p class="cardProductoPrecio">Precio: $${element.precio}</p>
-            <p class="btn" data-id="${element.id}">Comprar</p>
+            <p class="btn" data-id="${element.id}">Agregar 🛒</p>
         `
 seccionTarjetas.appendChild(card)
-//console.log(card)
+
 });
 
 const botones = document.querySelectorAll(".cardProducto")
-//console.log(botones)
 
-//const boton = botones[0].querySelector(".btn")
-//boton.onclick = (e) => console.log(e.target)
-//console.log(boton)
 
 for( i=0; i < botones.length; i++) {
     botones[i].querySelector(".btn").onclick = (e) => agregarCarrito(e.target.dataset.id)
@@ -46,8 +43,6 @@ function agregarCarrito (itemID){
     carrito = recuperarCarritoLS()
     const prod = productos.find(e => e.id == itemID)
     
-    //const indexItem = carrito.indexof(carrito.id=itemID)
-    console.log(carrito.length)
     if (carrito.length == 0) {
         auxCarrito.cantidad=1
         auxCarrito.id=prod.id
@@ -59,7 +54,6 @@ function agregarCarrito (itemID){
         guardarCarritoLS(carrito)
     } else {
         const indexItem = carrito.findIndex( e => e.id==itemID)
-        console.log("El indice dentro del carrito es: " + indexItem)
         if (indexItem<0){
             auxCarrito.cantidad=1
             auxCarrito.id=prod.id
@@ -73,10 +67,9 @@ function agregarCarrito (itemID){
             carrito[indexItem].cantidad++
             guardarCarritoLS(carrito)
         }
+        
     }
-
-
-
+    actualizarBasquet(carrito)
 }
 
 function inicializarCarrito(){
@@ -105,4 +98,16 @@ function guardarCarritoLS(array){
     localStorage.setItem('miCarrito', JSON.stringify(array))
 }
 
+function actualizarBasquet (array){
+    let cantidad = 0
+    const basquet = document.querySelector("#iconoCarrito")
 
+    array.forEach (e => (cantidad = cantidad + e.cantidad) )
+    
+    if (cantidad == 0) {
+        basquet.textContent = `🛒VACIO`    
+    } else {
+     basquet.innerHTML = `<a class="nav-link  " href="../pages/carrito.html">🛒${cantidad}</a>`
+    }
+    
+}
