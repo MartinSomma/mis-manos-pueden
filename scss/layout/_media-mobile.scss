@@ -149,6 +149,22 @@
         ;
         
     }
+    #tituloCompra{
+        @include prop-texto('Gotu', $tamanio-texto-mobile, left, 50px, none);
+    }
+
+    .tabla {
+        width: 95%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    .resumen{
+        margin:auto;
+        margin-bottom: 20px;
+        text-align: center;
+        
+    }
 
 }
 
