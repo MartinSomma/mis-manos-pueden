@@ -224,6 +224,30 @@ main section h2 {
   font-weight: none;
 }
 
+.btnSuma {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 10px;
+  background: grey;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+}
+
+.btnResta {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 10px;
+  background: #808080;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+}
+
 .items {
   grid-area: items;
 }
@@ -421,6 +445,10 @@ main section h2 {
   }
   /*====== CARRITO ======*/
   .contenedorCarrito {
+    gap: 0px;
+    margin: auto;
+    margin-bottom: 0px;
+    width: 100%;
     grid-template-columns: 1fr;
     grid-template-rows: 2;
     grid-template-areas: "items" "totales";

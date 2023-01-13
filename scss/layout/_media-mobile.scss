@@ -137,6 +137,10 @@
     
     /*====== CARRITO ======*/
     .contenedorCarrito {
+        gap: 0px;
+        margin: auto ;
+        margin-bottom: 0px;
+        width: 100%;
         grid-template-columns: 1fr ;
         grid-template-rows: 2;
         grid-template-areas: 

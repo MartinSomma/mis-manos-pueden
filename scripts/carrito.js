@@ -15,9 +15,10 @@ function llenarTablaCarrito(){
                         <td class="tablaId">${e.id}</td>
                         <td class="tablaImagen"><img src="${pathImg}${e.foto}" alt="${e.nombre}" class="imgTd"></td>
                         <td class="tablaNombre">${e.nombre}</td>
-                        <td class="tablaCantidad">${e.cantidad}</td>
+                        
                         <td class="btnAccion tablaBotones">
-                            <buttom class="btn btn-lg btnSuma " data-id=${e.id}>+</buttom>
+                            <buttom class="btn btnSuma " data-id=${e.id}>+</buttom>
+                            <span> ${e.cantidad} </span>
                             <buttom class="btn btnResta " data-id=${e.id}>-</buttom>
                         </td>
                         <td class="tablaPrecio">$ ${e.precio*e.cantidad}</td>
@@ -35,7 +36,7 @@ function llenarTablaCarrito(){
         TablaFooter.innerHTML = `
                 <div class="resumen">
                     <p id="tituloCompra" > <strong>RESUMEN DE LA COMPRA</strong></p>
-                    <p id="totalCompra" >TOTAL: $ ${total}</p>
+                    <p id="totalCompra" ><strong>TOTAL: $ ${total}</strong></p>
                     <buttom class="btn btnVaciarCarrito">Vaciar Carrito</buttom>
                     <buttom class="btn btnVaciarCarrito">Finalizar Compra</buttom>
                 </div>    

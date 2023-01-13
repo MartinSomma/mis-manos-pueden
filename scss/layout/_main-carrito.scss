@@ -2,6 +2,29 @@
 #tituloCompra{
         @include prop-texto('Gotu', $tamanio-texto-web, left, 50px, none);
 }
+.btnSuma {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 10px;
+    background: grey;
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+}
+
+.btnResta{
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 10px;
+    background: #808080;
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+}
 
 
 .items{
