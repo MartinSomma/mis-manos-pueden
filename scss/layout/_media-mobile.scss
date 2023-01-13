@@ -135,5 +135,16 @@
         }
     }
     
+    /*====== CARRITO ======*/
+    .contenedorCarrito {
+        grid-template-columns: 1fr ;
+        grid-template-rows: 2;
+        grid-template-areas: 
+        "items"
+        "totales"
+        ;
+        
+    }
 
 }
+

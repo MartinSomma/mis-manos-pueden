@@ -44,11 +44,9 @@ function agregarCarrito (itemID){
     const indexCarrito = carrito.findIndex(e => e.id == itemID) 
 
     if (indexCarrito >=0) {
-        //console.log("el producto esta en el carrito")
         carrito[indexCarrito].cantidad++
         guardarCarritoLS(carrito)
     } else{
-        //console.log("el producto NO esta en el carrito")
         auxCarrito.cantidad=1
         auxCarrito.id=prod.id
         auxCarrito.nombre=prod.nombre
@@ -72,7 +70,7 @@ function inicializarCarrito(){
 function recuperarCarritoLS(){
     const valor = localStorage.getItem('miCarrito')
     const array = []
-    
+
     if (valor == null){
         return array
     } else {

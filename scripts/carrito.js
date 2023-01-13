@@ -1,4 +1,4 @@
-
+const pathImg = '../img/'
 llenarTablaCarrito()
 
 
@@ -7,19 +7,20 @@ function llenarTablaCarrito(){
     carrito = recuperarCarritoLS()
     if (carrito.length>0){
         const tablaBody = document.querySelector("tbody")
-        const TablaFooter = document.querySelector("tfoot")
+        const TablaFooter = document.querySelector(".totales")
         let total = 0
         carrito.forEach( e => {
             const item = document.createElement("tr")
             item.innerHTML = `
-                        <td>${e.id}</td>
-                        <td>${e.nombre}</td>
-                        <td>${e.cantidad}</td>
-                        <td class="btnAccion">
-                            <buttom class="btn btnSuma" data-id=${e.id}>+</buttom>
-                            <buttom class="btn btnResta" data-id=${e.id}>-</buttom>
+                        <td class="tablaId">${e.id}</td>
+                        <td class="tablaImagen"><img src="${pathImg}${e.foto}" alt="${e.nombre}" class="imgTd"></td>
+                        <td class="tablaNombre">${e.nombre}</td>
+                        <td class="tablaCantidad">${e.cantidad}</td>
+                        <td class="btnAccion tablaBotones">
+                            <buttom class="btn btn-lg btnSuma " data-id=${e.id}>+</buttom>
+                            <buttom class="btn btnResta " data-id=${e.id}>-</buttom>
                         </td>
-                        <td>${e.precio*e.cantidad}</td>
+                        <td class="tablaPrecio">$ ${e.precio*e.cantidad}</td>
                         `
             tablaBody.appendChild(item)
             total = total + (e.precio*e.cantidad)
@@ -30,13 +31,15 @@ function llenarTablaCarrito(){
             btnResta.onclick = (e) => RestaCantCarrito(e)
 
         })
-        const filaFooter = document.createElement("tr")
-        filaFooter.innerHTML = `
-                    <th colspan="3">TOTAL</th>
-                    <td> <buttom class="btn btnVaciarCarrito">Vaciar Carrito</buttom></td>
-                    <td>${total}</td>
+        
+        TablaFooter.innerHTML = `
+                <div class="resumen">
+                    <p id="tituloCompra" > <strong>RESUMEN DE LA COMPRA</strong></p>
+                    <p id="totalCompra" >TOTAL: $ ${total}</p>
+                    <buttom class="btn btnVaciarCarrito">Vaciar Carrito</buttom>
+                    <buttom class="btn btnVaciarCarrito">Finalizar Compra</buttom>
+                </div>    
         `
-        TablaFooter.append(filaFooter)
         const btnVaciar = TablaFooter.querySelector(".btnVaciarCarrito")
         btnVaciar.onclick = (e) => vaciarCarrito()
 
@@ -89,6 +92,8 @@ function guardarCarritoLS(array){
 
 function borrarTablaCarrito () {
     const tablaBody = document.querySelector("tbody")
+    const totalCompra = document.querySelector("#totalCompra")
+    totalCompra.innerHTML = "TOTAL: $"
     while (tablaBody.firstChild){
         tablaBody.removeChild(tablaBody.firstChild)
     }
@@ -111,4 +116,5 @@ function vaciarCarrito() {
     guardarCarritoLS(carrito)
     borrarTablaCarrito()
     llenarTablaCarrito()
+    window.location.href = "./productos.html";
 }

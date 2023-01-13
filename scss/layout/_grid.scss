@@ -10,3 +10,18 @@
     "footer footer"
     ;
 }
+
+.contenedorCarrito {
+    gap: 40px;
+    margin: auto ;
+    margin-bottom: 40px;
+    width: 80%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1;
+    grid-template-areas: 
+    "items items totales"
+    ;
+    
+}
