@@ -1,4 +1,4 @@
-const productos = [
+const productos_array = [
     {
         id: 1,
         nombre: 'Velas de Magnolia', 

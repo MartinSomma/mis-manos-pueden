@@ -1,4 +1,44 @@
- main {
+
+
+.espacioCarrousel {
+    //background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    //color: #000;
+    margin: 0;
+    padding: 0;
+  }
+
+  .swiper {
+    width: 500px;
+    height: 360px;
+    margin-bottom: 40px;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: lightgrey;
+  }
+
+  .swiper-slide img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    &:hover{
+        cursor: pointer;
+    }
+  }
+
+main {
     grid-area: main;
     section{
         h1{

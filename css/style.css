@@ -66,6 +66,42 @@ footer li a {
   width: 30px;
 }
 
+.espacioCarrousel {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 500px;
+  height: 360px;
+  margin-bottom: 40px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: lightgrey;
+}
+
+.swiper-slide img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+.swiper-slide img:hover {
+  cursor: pointer;
+}
+
 main {
   grid-area: main;
 }
@@ -148,6 +184,12 @@ main section h2 {
   margin-bottom: 20px;
   text-align: center;
 }
+.cardProducto:hover {
+  scale: 1.01;
+  box-shadow: 2px -1px 36px -9px rgba(0, 0, 0, 0.77);
+  -webkit-box-shadow: 2px -1px 36px -9px rgba(0, 0, 0, 0.77);
+  -moz-box-shadow: 2px -1px 36px -9px rgba(0, 0, 0, 0.77);
+}
 .cardProducto img {
   width: 238px;
   height: 159px;
@@ -200,6 +242,28 @@ main section h2 {
 .btn:hover {
   background: #7d8285;
   text-decoration: none;
+}
+
+.swal-button {
+  padding: 7px 19px;
+  border-radius: 2px;
+  background-color: lightgray;
+  font-size: 12px;
+  border: 1px solid grey;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.swal-overlay {
+  background-color: rgba(67, 72, 71, 0.45);
+}
+
+.swal-button {
+  color: #000000;
+  padding: 7px 19px;
+  border-radius: 2px;
+  background-color: lightgray;
+  font-size: 12px;
+  border: 1px solid grey;
 }
 
 .quienesSomos {
@@ -291,6 +355,9 @@ main section h2 {
   margin-bottom: 20px;
 }
 
+/*.tablaId{
+
+}*/
 .tablaImagen {
   width: 100px;
 }
@@ -311,6 +378,10 @@ main section h2 {
   width: 150px;
 }
 
+/*.tablaPrecio{
+
+
+}*/
 .comoComprar {
   width: 70%;
   margin: auto;

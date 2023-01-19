@@ -18,6 +18,12 @@
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
+    &:hover{
+        scale: 1.01;
+        box-shadow: 2px -1px 36px -9px rgba(0,0,0,0.77);
+        -webkit-box-shadow: 2px -1px 36px -9px rgba(0,0,0,0.77);
+        -moz-box-shadow: 2px -1px 36px -9px rgba(0,0,0,0.77);
+    }
     img {
         width: 238px;
         height: 159px;
@@ -63,7 +69,32 @@
     }
   }
   
-  .btn:hover {
+.btn:hover {
     background: #7d8285;
     text-decoration: none;
+}
+
+
+.swal-button {
+    padding: 7px 19px;
+    border-radius: 2px;
+    background-color: lightgray;
+    font-size: 12px;
+    border: 1px solid grey;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.swal-overlay {
+  background-color: rgba(67, 72, 71, 0.45);
+}
+
+.swal-button {
+    color: #000000;
+    padding: 7px 19px;
+    border-radius: 2px;
+    background-color: lightgray;
+    font-size: 12px;
+    border: 1px solid grey;
+    //text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+    
   }
