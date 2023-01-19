@@ -446,6 +446,10 @@ main section h2 {
     margin: auto;
     margin-bottom: 40px;
   }
+  .swiper {
+    width: 300px;
+    height: 216px;
+  }
   main section h2 {
     font-family: "Gotu";
     font-size: 26px;
