@@ -9,6 +9,9 @@
 .comoComprarPregunta {
     @extend .comoComprarRespuesta;
     font-weight: bold;
+    body.bg-dark &{
+        color: grey
+    }
     
 }
 
@@ -16,5 +19,8 @@
     @include prop-texto('habibi', $tamanio-texto-web, justify, none, none);
     margin: 10px;
     padding: 0;
+    body.bg-dark &{
+        color: grey
+    }
 
 }

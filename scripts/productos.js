@@ -1,17 +1,54 @@
 const seccionTarjetas = document.querySelector(".seccionTarjetas")
 const pathImg = '../img/'
 
+const ordenar = document.querySelector(".formOrdenar")
+const btnBuscar = document.getElementById("btnBuscar")
 
 
 
 
-fetch("https://63c17853376b9b2e647c8e81.mockapi.io/mmp/productos")
+btnBuscar.onclick = (e) => {
+    e.preventDefault()
+    str = document.getElementById("inputBuscar").value
+    obtenerProductosOrdenados(`?nombre=${str}`)
+    
+}
+
+ordenar.onchange = (e) =>{
+    paramOrdenar = document.getElementById("lang").value
+    if (paramOrdenar == "menorPrecio"){
+        obtenerProductosOrdenados ("?sortBy=precio&order=asc")
+    } else if (paramOrdenar == "mayorPrecio"){
+        obtenerProductosOrdenados ("?sortBy=precio&order=desc")
+    } else if (paramOrdenar == "NombreAZ"){
+        obtenerProductosOrdenados ("?sortBy=nombre&order=asc")
+    } else if (paramOrdenar == "NombreZA"){
+        obtenerProductosOrdenados ("?sortBy=nombre&order=desc")
+    } else if (paramOrdenar == "Destacados"){
+        obtenerProductosOrdenados ("?destacado=true")
+    }
+}
+
+function obtenerProductosOrdenados (params){
+    fetch(`https://63c17853376b9b2e647c8e81.mockapi.io/mmp/productos${params}`)
+            .then((resp) => resp.json())
+            .then ((data) => mostrarProductos(data))
+            .catch ( (error) => {
+            console.log("No se pudo conectar, error: " + error)})
+
+}
+
+
+
+
+fetch("https://63c17853376b9b2e647c8e81.mockapi.io/mmp/productos?sortBy=precio&order=desc")
     .then((resp) => resp.json())
     .then ((data) => mostrarProductos(data))
     .catch ( (error) => {
         console.log("No se pudo conectar, error: " + error)})
 
 function mostrarProductos (productos){
+    seccionTarjetas.innerHTML = ""
     productos.forEach(element => {
         const card = document.createElement("div")
         card.className = "cardProducto"
@@ -32,6 +69,9 @@ function mostrarProductos (productos){
     });
     
 }
+
+
+
 
 
 

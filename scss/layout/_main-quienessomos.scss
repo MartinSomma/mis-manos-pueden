@@ -2,6 +2,9 @@
    
         margin-left: 10px;
         @include prop-texto('habibi', $tamanio-texto-web, justify, none, none );
+        body.bg-dark & {
+                color: grey;
+        }
    }
 
 .ajustarContenido{

@@ -1,5 +1,7 @@
 
 @media (max-width: 576px){
+
+
     /*=========== mobile view - index ===============*/
 
     section{
@@ -36,7 +38,6 @@
     .swiper {
         width: 300px;
         height: 216px;
-
     }
 
     main{
@@ -85,11 +86,21 @@
         font-size: $tamanio-texto-mobile;
     }
 
-    
-
     .cardProductoComentario{
         @extend .cardProductoNombre;
         height: 90px;
+    }
+
+    .inputBuscar{
+        width: 40%;
+    }
+
+    .espacioFormBuscar{
+        text-align: center;
+    }
+
+    .espacioFormOrdenar{
+        text-align: center;  
     }
 
     /*======== COMO COMPRAR MOBILE VIEW ======*/

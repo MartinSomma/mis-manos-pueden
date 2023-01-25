@@ -71,3 +71,43 @@ function actualizarBasquet (array){
     }
     
 }
+// FUNCIONES DE MODO OSCURO
+
+const navBar = document.getElementById("barraNaveg")
+const btnSwitch = document.getElementById("switch")
+
+syncModoOscuro()
+
+btnSwitch.addEventListener("click", modoOscuro)
+
+function leerLS(key){
+    return JSON.parse(localStorage.getItem(key))
+}
+
+function grabarLS (key, valor){
+     localStorage.setItem(key, JSON.stringify(valor))
+}
+
+function toogleMoLS(){
+    const valor = leerLS('modoOscuro')
+    valor == true ? grabarLS('modoOscuro', false) : grabarLS('modoOscuro', true)
+}
+
+function modoOscuro (evento) {
+    document.body.classList.toggle("bg-dark")
+    btnSwitch.classList.toggle("active")
+    navBar.classList.toggle("bg-white")
+    navBar.classList.toggle ("navbar-dark")
+    navBar.classList.toggle("bg-dark")
+    if (evento != "sync"){
+        toogleMoLS()
+    }
+}
+
+function syncModoOscuro () {
+    const valor = leerLS('modoOscuro')
+    if (valor == true) {
+        modoOscuro("sync")
+    } 
+}
+

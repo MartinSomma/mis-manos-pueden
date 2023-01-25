@@ -166,6 +166,70 @@ main section h2 {
   overflow: hidden;
 }
 
+body {
+  background: none;
+}
+body.dark {
+  background-color: black;
+}
+
+body.bg-dark h1 {
+  color: grey;
+}
+
+.espacioSwitchCarrito {
+  display: flex;
+}
+
+.espacioModoOscuro {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.switch {
+  background-color: #343d5b;
+  border-radius: 1000px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-content: flex-end;
+  outline: none;
+}
+.switch::after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  background: #f1f1f1;
+  top: 0;
+  left: 0;
+  right: unset;
+  border-radius: 100px;
+  transition: 0.3s ease all;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.switch.active {
+  background: orange;
+  color: #000000;
+}
+.switch.active::after {
+  right: 0;
+  left: unset;
+}
+.switch span {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  display: block;
+  background: none;
+  color: #FFF;
+}
+
 .seccionTarjetas {
   margin: auto;
   max-width: 1700px;
@@ -209,6 +273,9 @@ main section h2 {
   line-height: none;
   font-weight: none;
 }
+body.bg-dark .cardProductoNombre, body.bg-dark .cardProductoComentario {
+  color: grey;
+}
 
 .cardProductoPrecio {
   font-family: "gotu";
@@ -216,6 +283,9 @@ main section h2 {
   text-align: none;
   line-height: none;
   font-weight: bold;
+}
+body.bg-dark .cardProductoPrecio {
+  color: grey;
 }
 
 .cardProductoComentario {
@@ -234,14 +304,13 @@ main section h2 {
   text-decoration: none;
   list-style: none;
 }
-.btn a {
-  text-decoration: none;
-  color: #000000;
-}
-
 .btn:hover {
   background: #7d8285;
   text-decoration: none;
+}
+.btn a {
+  text-decoration: none;
+  color: #000000;
 }
 
 .swal-button {
@@ -266,6 +335,52 @@ main section h2 {
   border: 1px solid grey;
 }
 
+.titulo {
+  width: 100%;
+}
+
+.espacioFormOrdenar {
+  width: 100%;
+  padding-right: 20px;
+  text-align: end;
+  font-size: 12px;
+}
+.espacioFormOrdenar select {
+  border: none;
+}
+body.bg-dark .espacioFormOrdenar select {
+  background-color: black;
+  color: grey;
+}
+body.bg-dark .espacioFormOrdenar {
+  color: grey;
+}
+
+.formBuscar {
+  width: 100%;
+}
+
+.inputBuscar {
+  height: 26px;
+  width: 10%;
+  text-align: center;
+  border-radius: 5px;
+  border: solid 1px;
+}
+body.bg-dark .inputBuscar {
+  background-color: lightgrey;
+}
+
+.espacioFormBuscar {
+  width: 100%;
+  padding-right: 20px;
+  text-align: end;
+}
+
+#btnBuscar {
+  border-radius: 5px;
+}
+
 .quienesSomos {
   margin-left: 10px;
   font-family: "habibi";
@@ -273,6 +388,9 @@ main section h2 {
   text-align: justify;
   line-height: none;
   font-weight: none;
+}
+body.bg-dark .quienesSomos {
+  color: grey;
 }
 
 .ajustarContenido {
@@ -286,6 +404,9 @@ main section h2 {
   text-align: left;
   line-height: 50px;
   font-weight: none;
+}
+body.bg-dark #tituloCompra {
+  color: grey;
 }
 
 .btnSuma {
@@ -320,10 +441,16 @@ main section h2 {
 .items {
   grid-area: items;
 }
+body.bg-dark .items {
+  color: grey;
+}
 
 .totales {
   grid-area: totales;
   border-radius: 10px;
+}
+body.bg-dark .totales {
+  color: grey;
 }
 
 .resumen {
@@ -337,16 +464,25 @@ main section h2 {
   -moz-box-shadow: 10px 10px 21px -4px rgba(0, 0, 0, 0.52);
   box-shadow: 10px 10px 21px -4px rgba(0, 0, 0, 0.52);
 }
+body.bg-dark .resumen {
+  color: grey;
+}
 
 .tablaBody tr td {
   height: 50px;
   border-bottom: 1px solid black;
   text-align: center;
 }
+body.bg-dark .tablaBody tr td {
+  color: grey;
+}
 
 .encabezado {
   background-color: lightgray;
   text-align: center;
+}
+body.bg-dark .encabezado {
+  color: grey;
 }
 
 .tabla {
@@ -354,10 +490,10 @@ main section h2 {
   margin: auto;
   margin-bottom: 20px;
 }
+body.bg-dark .tabla {
+  color: grey;
+}
 
-/*.tablaId{
-
-}*/
 .tablaImagen {
   width: 100px;
 }
@@ -378,10 +514,18 @@ main section h2 {
   width: 150px;
 }
 
-/*.tablaPrecio{
+#espacioDatosEnvio {
+  width: 70%;
+  margin: auto;
+  display: none;
+  transition: 20s ease all;
+}
 
+.formInputError {
+  border: red;
+  outline: none;
+}
 
-}*/
 .comoComprar {
   width: 70%;
   margin: auto;
@@ -391,6 +535,9 @@ main section h2 {
 
 .comoComprarPregunta {
   font-weight: bold;
+}
+body.bg-dark .comoComprarPregunta {
+  color: grey;
 }
 
 .comoComprarRespuesta, .comoComprarPregunta {
@@ -402,18 +549,84 @@ main section h2 {
   margin: 10px;
   padding: 0;
 }
+body.bg-dark .comoComprarRespuesta, body.bg-dark .comoComprarPregunta {
+  color: grey;
+}
 
-.form-label {
+.formLabel {
   font-family: "habibi";
   font-size: 16px;
   text-align: justify;
   line-height: none;
   font-weight: none;
 }
+body.bg-dark .formLabel {
+  color: grey;
+}
 
 .ajustarContenidoContacto {
   width: 70%;
   margin: auto;
+}
+body.bg-dark .ajustarContenidoContacto {
+  color: grey;
+}
+
+.formInput {
+  width: 100%;
+  border-radius: 5px;
+  border: solid 1px lightgrey;
+  height: 36px;
+  padding-left: 10px;
+}
+
+.formInputError {
+  width: 100%;
+  border-radius: 5px;
+  border: solid 1px red;
+  height: 36px;
+  padding-left: 10px;
+}
+.formInputError:focus {
+  border: solid 3px red;
+  outline: none;
+}
+
+.formGrupoInput {
+  position: relative;
+}
+
+.formularioValidacionEstado {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 100;
+  font-size: 16px;
+  opacity: 0;
+}
+
+.formGrupoCorrecto .formularioValidacionEstado {
+  opacity: 1;
+}
+
+.formGrupoIncorrecto {
+  border: red;
+  opacity: 1;
+}
+
+.formMensajeError {
+  font-size: 12px;
+  color: red;
+  padding-left: 10px;
+  display: none;
+}
+
+.form-control-error {
+  border: solid 1px red;
+}
+.form-control-error:focus {
+  border: solid 3px red;
+  outline: none;
 }
 
 @media (max-width: 576px) {
@@ -422,7 +635,7 @@ main section h2 {
     margin: 20px;
   }
   section h1 {
-    font-size: 20px;
+    font-size: 26px;
     text-align: center;
   }
   .bannerDecora {
@@ -480,6 +693,15 @@ main section h2 {
   }
   .cardProductoComentario {
     height: 90px;
+  }
+  .inputBuscar {
+    width: 40%;
+  }
+  .espacioFormBuscar {
+    text-align: center;
+  }
+  .espacioFormOrdenar {
+    text-align: center;
   }
   /*======== COMO COMPRAR MOBILE VIEW ======*/
   .comoComprar {
@@ -565,7 +787,7 @@ main section h2 {
     background-repeat: no-repeat;
   }
   main section h1 {
-    font-size: 20px;
+    font-size: 26px;
   }
   main section h2 {
     font-size: 26px;

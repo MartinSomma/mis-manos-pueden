@@ -1,3 +1,73 @@
+body {
+    background: none;
+    //transition: .3s ease all;
+    &.dark{
+        background-color: black;
+    }
+
+}
+
+
+h1{
+    body.bg-dark & {
+        color: grey;
+    }
+}
+
+.espacioSwitchCarrito{
+    display: flex;
+}
+
+.espacioModoOscuro{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.switch{
+    background-color: #343d5b;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-content: flex-end;
+    outline: none;
+    &::after{
+        content: "";
+        display: block;
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        background: #f1f1f1;
+        top: 0;
+        left: 0;
+        right: unset;
+        border-radius: 100px;
+        transition: .3s ease all;
+        box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2);
+    }
+    &.active {
+        background: orange;
+        color: #000000;
+        &::after{
+            right: 0;
+            left: unset;
+        }
+    }
+    span {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        display: block;
+        background: none;
+        color: #FFF;
+    }
+
+}
 
 .seccionTarjetas{
     margin: auto;
@@ -39,11 +109,16 @@
 
 .cardProductoNombre{
     @include prop-texto('habibi', $tamanio-texto-web, none, none, none);
-    
+    body.bg-dark & {
+        color: grey;
+    }
 }
 
 .cardProductoPrecio{
     @include prop-texto('gotu', $tamanio-texto-web, none, none, bold);
+    body.bg-dark & {
+        color: grey;
+    }
 }
 
 
@@ -54,6 +129,7 @@
     margin-right: 5px;
     
 }
+
 .btn {
     border-radius: 5px;
     font-family: 'habibi';
@@ -63,16 +139,17 @@
     padding: 10px 30px 10px 30px;
     text-decoration: none;
     list-style: none;
+    &:hover{
+        background: #7d8285;
+        text-decoration: none;
+    }
     a{
         text-decoration: none;
         color: #000000;
     }
   }
-  
-.btn:hover {
-    background: #7d8285;
-    text-decoration: none;
-}
+
+
 
 
 .swal-button {
@@ -96,5 +173,55 @@
     font-size: 12px;
     border: 1px solid grey;
     //text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.titulo{
+    width: 100%;
+}
+
+
+
+.espacioFormOrdenar{
+    width: 100%;
+    padding-right: 20px;
+    text-align: end;
+    font-size: 12px;
+    select {
+        border: none;
+        body.bg-dark & {
+            background-color: black;
+            color: grey;
+        }
+    }
+    body.bg-dark & {
+        color: grey;
+    }
+}
+
+.formBuscar{
+    width: 100%;
+    //background-color: #000000;
+}
+
+.inputBuscar{
+    height: 26px;
+    width: 10%;
+    text-align: center;
+    border-radius: 5px;
+    border: solid 1px;
+    body.bg-dark & {
+        background-color: lightgrey;
+    }
+
     
-  }
+}
+
+.espacioFormBuscar{
+    width: 100%;
+    padding-right: 20px;
+    text-align: end;
+}
+
+#btnBuscar{
+    border-radius: 5px;
+}
