@@ -5,7 +5,7 @@ const ordenar = document.querySelector(".formOrdenar")
 const btnBuscar = document.getElementById("btnBuscar")
 
 
-
+let str = ""
 
 btnBuscar.onclick = (e) => {
     e.preventDefault()
@@ -15,17 +15,20 @@ btnBuscar.onclick = (e) => {
 }
 
 ordenar.onchange = (e) =>{
-    paramOrdenar = document.getElementById("lang").value
+    paramOrdenar = document.getElementById("opcionesOrdenar").value
+    str = document.getElementById("inputBuscar").value
     if (paramOrdenar == "menorPrecio"){
-        obtenerProductosOrdenados ("?sortBy=precio&order=asc")
+        obtenerProductosOrdenados (`?sortBy=precio&order=asc&nombre=${str}`)
     } else if (paramOrdenar == "mayorPrecio"){
-        obtenerProductosOrdenados ("?sortBy=precio&order=desc")
+        obtenerProductosOrdenados (`?sortBy=precio&order=desc&nombre=${str}`)
     } else if (paramOrdenar == "NombreAZ"){
-        obtenerProductosOrdenados ("?sortBy=nombre&order=asc")
+        obtenerProductosOrdenados (`?sortBy=nombre&order=asc&nombre=${str}`)
     } else if (paramOrdenar == "NombreZA"){
-        obtenerProductosOrdenados ("?sortBy=nombre&order=desc")
+        obtenerProductosOrdenados (`?sortBy=nombre&order=desc&nombre=${str}`)
     } else if (paramOrdenar == "Destacados"){
-        obtenerProductosOrdenados ("?destacado=true")
+        console.log ('nombre: ', str )
+        obtenerProductosOrdenados (`?destacado=true&nombre=${str}`)
+        
     }
 }
 
